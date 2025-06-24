@@ -115,50 +115,109 @@ Each chart is included in the `/assets/` folder and referenced in this README fo
 
 ## 🤖 Models Implemented
 
+In addition to exploratory data analysis, several machine learning models were deployed to uncover predictive patterns and support strategic decisions. Below is a breakdown of each model's purpose, rationale, outcomes, and analytical contribution:
+
+---
+
 ### 🎯 RandomForestClassifier  
-**Purpose**: Predict incident occurrence and race winners  
-![Figure 38](./assets/figure38_rf_accuracy.png)  
-**Results**:  
-- Incident prediction: 91.77% accuracy  
-- Winner prediction: 80% accuracy (imbalanced classes)  
+![Figure 38](./assets/figure38_randomforest.png.jpg)
+
+**Purpose**:  
+To classify whether an incident occurred during a race (e.g., retirement, crash) or predict race winners based on performance and status metrics.
+
+**Why It Was Used**:  
+Random Forest is a powerful ensemble model that combines multiple decision trees. It performs well on **non-linear** data and handles **imbalanced features** and **missing values** better than most single estimators. Its feature importance metric also aids in interpretability.
+
+**Results Achieved**:  
+- Achieved **91.77% accuracy** for incident prediction.
+- ~80% accuracy for race winner classification (though precision/recall imbalance existed due to fewer positive class samples).
+
+**Analytical Benefit**:  
+Helped assess race outcome reliability based on pit data and status flags. Highlighted critical features influencing retirements, which can inform future safety or strategy improvements.
 
 ---
 
 ### 📉 Support Vector Regressor (SVR)  
-**Purpose**: Predict lap times  
-![Figure 39](./assets/figure39_svr_results.png)  
-**Results**:  
-- High MSE  
-- Underfitting likely due to poor feature selection  
+![Figure 39](./assets/figure39_svr.png.jpg)
+
+**Purpose**:  
+To estimate driver lap times based on circuit attributes and historical race metrics.
+
+**Why It Was Used**:  
+SVR is ideal for **capturing non-linear relationships** using kernel functions. It's particularly suited for **high-dimensional, continuous data**, making it a good candidate for time-related predictions.
+
+**Results Achieved**:  
+- Performance was **suboptimal**, with high **Mean Squared Error (MSE)** and **negative R² scores**.
+
+**Analytical Limitation**:  
+The model exposed **data quality issues** and potential underfitting. This was useful in identifying the need for better feature engineering and data normalization before modeling.
 
 ---
 
 ### 🔢 Ridge Regression  
-**Purpose**: Predict race outcomes using pit stop metrics  
-![Figure 40](./assets/figure40_ridge_results.png)  
-**Results**:  
-- High MSE, low R²  
-- Limited predictive capability  
+![Figure 40](./assets/figure40_ridge.png.jpg)
+
+**Purpose**:  
+To predict race outcomes (finishing positions) based on variables such as pit stop duration, qualifying position, and constructor.
+
+**Why It Was Used**:  
+Ridge Regression incorporates **L2 regularization**, making it robust against **multicollinearity**. It's preferred when trying to retain all features while reducing overfitting in linear models.
+
+**Results Achieved**:  
+- Results showed **high MSE** and **low R²**, indicating that linear assumptions didn’t hold for the chosen feature set.
+
+**Analytical Insight**:  
+Though not optimal, the model reinforced the complexity of race outcome prediction and the need for more non-linear approaches or richer features.
 
 ---
 
 ### 🌳 DecisionTreeRegressor  
-**Purpose**: Predict qualifying positions  
-![Figure 41](./assets/figure41_dtr_results.png)  
-**Results**:  
-- Model interpretable  
-- Useful for basic strategy forecasting  
+![Figure 41](./assets/figure41_decisiontree.png.jpg)
+
+**Purpose**:  
+To predict qualifying grid positions using driver and circuit data.
+
+**Why It Was Used**:  
+Decision Trees provide **fast, interpretable**, and **non-linear predictions**. They don't require feature scaling and are robust to outliers and missing data.
+
+**Results Achieved**:  
+- Delivered reasonable position predictions with limited tuning.
+- Exact metrics (R², MSE) were not deeply evaluated but qualitatively aligned with actual results.
+
+**Analytical Benefit**:  
+Served as a simple benchmark model for more advanced regressors and offered insight into how key features like circuit type, historical rank, or constructor affect grid placement.
 
 ---
 
-## 🎯 Simulation of Pit Stop Strategies
+### 📊 Strategy Simulation (Non-ML)
 
-Statistical simulations show:
-- Mean & std dev of different strategies
-- Estimated time savings by optimized sequences
-- Use of Monte Carlo-style sampling to evaluate randomness
+**Purpose**:  
+Simulated different pit stop strategies to evaluate their impact on total race time.
+
+**Why It Was Used**:  
+When machine learning isn't feasible (e.g., lack of labeled data), simulations help **compare hypothetical scenarios** using statistical averages and variances.
+
+**Results Achieved**:  
+- Quantified effects of 1-stop vs 2-stop vs 3-stop strategies.
+- Helped teams balance tire degradation vs pit stop delay.
+
+**Analytical Value**:  
+Offered tangible time-saving estimates for strategy planning, aiding constructors in pre-race decision-making.
 
 ---
+
+### ✅ Key Outcome Summary
+
+| Model                  | Use Case                       | Best Result       | Insight Gained                                         |
+|-----------------------|--------------------------------|-------------------|--------------------------------------------------------|
+| RandomForestClassifier| Race incident / winner prediction | 91.77% accuracy   | Highlights key race risk factors and performance signals |
+| SVR                   | Lap time regression             | Poor fit (MSE↑)   | Warned of data quality and model mismatch             |
+| Ridge Regression      | Finish position prediction      | Low R²            | Validated the need for non-linear modeling            |
+| DecisionTreeRegressor | Qualifying position prediction  | Qualitative match | Interpretable & fast for feature impact studies        |
+| Strategy Simulation   | Pit stop strategy optimization  | Time saved via 2-stop| Simulation confirms fewer stops may reduce total time |
+
+---
+
 
 ## ✅ Key Takeaways
 
