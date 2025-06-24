@@ -70,7 +70,7 @@ Our goal: Analyze historical F1 data to build **pit stop benchmarks**, **constru
 ## 📊 Exploratory Data Analysis (Key Visuals)
 
 ### Lewis Hamilton's Championship Standings Over Time  
-![Figure 12](/assets/figure12_hamilton_standings.png)
+![Figure 12](./assets/figure12_hamilton_standings.png.jpg)
 
 ### Mercedes Constructors' Standings  
 ![Figure 13](./assets/figure13_mercedes_standings.png)
