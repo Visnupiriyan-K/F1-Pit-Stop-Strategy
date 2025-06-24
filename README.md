@@ -73,22 +73,22 @@ Our goal: Analyze historical F1 data to build **pit stop benchmarks**, **constru
 ![Figure 12](./assets/figure12_hamilton_standings.png.jpg)
 
 ### Mercedes Constructors' Standings  
-![Figure 13](./assets/figure13_mercedes_standings.png)
+![Figure 13](./assets/figure13_mercedes_standings.png.jpg)
 
 ### Race Finish Position Distribution (Top 5 Constructors)  
-![Figure 14](./assets/figure14_boxplot_constructors.png)
+![Figure 14](./assets/figure14_boxplot_constructors.png.jpg)
 
 ### Monaco Circuit Finish Positions  
-![Figure 15](./assets/figure15_monaco_distribution.png)
+![Figure 15](./assets/figure15_monaco_distribution.png.jpg)
 
 ### Top 10 Drivers by Wins  
-![Figure 16](./assets/figure16_driver_wins.png)
+![Figure 16](./assets/figure16_driver_wins.png.jpg)
 
 ### Top 10 Drivers by Points  
-![Figure 17](./assets/figure17_driver_points.png)
+![Figure 17](./assets/figure17_driver_points.png.jpg)
 
 ### Average Qualifying Position  
-![Figure 18](./assets/figure18_avg_qualifying.png)
+![Figure 18](./assets/figure18_avg_qualifying.png.jpg)
 
 ---
 
@@ -96,11 +96,12 @@ Our goal: Analyze historical F1 data to build **pit stop benchmarks**, **constru
 
 | Metric | Visualization |
 |--------|---------------|
-| Pit Stop Distribution | ![Figure 19](./assets/figure19_pitstop_dist.png) |
-| Constructors vs Avg Pit Stop Time | ![Figure 20](./assets/figure20_const_avg_time.png) |
-| Tracks vs Avg Pit Stop Time | ![Figure 21](./assets/figure21_tracks_avg_time.png) |
-| Pit Stop Duration by Constructor | ![Figure 22](./assets/figure22_const_pitstop_scatter.png) |
-| Pit Stop Duration by Circuit | ![Figure 24](./assets/figure24_avg_pitstop_circuit.png) |
+| Pit Stop Distribution | ![Figure 19](./assets/figure19_pitstop_dist.png.jpg) |
+| Constructors vs Avg Pit Stop Time | ![Figure 20](./assets/figure20_const_avg_time.png.jpg) |
+| Tracks vs Avg Pit Stop Time | ![Figure 21](./assets/figure21_tracks_avg_time.png.jpg) |
+| Pit Stop Duration by Constructor | ![Figure 22](./assets/figure22_const_pitstop_scatter.png.jpg) |
+| Pit Stop Duration by Constructor (2nd Image) | ![Figure 23](./assets/figure23_const_pitstop_scatter2.png.jpg) |
+| Pit Stop Duration by Circuit | ![Figure 24](./assets/figure24_avg_pitstop_circuit.png.jpg) |
 
 📈 Figures 25 to 36 explore:
 - Circuit variability
